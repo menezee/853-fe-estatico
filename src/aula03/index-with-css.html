@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Formulário lets code</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  </head>
+  <body>
+    <form
+      class="container"
+      action="http://localhost:3001/create"
+      method="POST"
+    >
+      <div class="field p-2">
+        <label class="label">Nome</label>
+        <div class="control">
+          <input class="input" type="name" name="name" placeholder="Digite seu nome">
+        </div>
+        <div class="buttons m-2">
+          <button class="button is-primary">Enviar</button>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
