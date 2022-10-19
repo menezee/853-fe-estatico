@@ -2,6 +2,7 @@ import express from 'express';
 import repository from './repository.js';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { fetchPokemon } from './pokemon.js';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 
@@ -31,6 +32,14 @@ app.post('/create', async (req, res) => {
   } else {
     res.statusCode(500).send('failed to create user');
   }
+});
+
+app.get('/pokemon', async (req, res) => {
+  const pokemonID = req.query.pokemonID;
+  const pokemon = await fetchPokemon(pokemonID);
+  const html = `<div><h1>${pokemon.name}</h1><img src="${pokemon.image}" /></div>`;
+  res.setHeader('Content-Type', 'text/html');
+  res.send(html);
 });
 
 const port = 3001;

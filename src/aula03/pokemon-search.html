@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Busca de Pokémon</title>
+  <style>
+    .meu-label {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>
+      Qual ID do Pokémon que vamos buscar?
+    </h1>
+  </header>
+  <main>
+    <!-- GET /pokemon?pokemonID=42 -->
+    <form
+      action="http://localhost:3001/pokemon"
+      method="GET"
+    >
+      <!-- https://pokeapi.co/api/v2/pokemon/1 -->
+      <div>
+        <label class="meu-label" for="pokemonID">ID do Pokémon</label>
+        <input
+          id="pokemon-id"
+          name="pokemonID"
+          type="number"
+          placeholder="42"
+          value="99"
+        />
+      </div>
+      <div>
+        <button type="reset">Resetar</button>
+        <button type="submit">Buscar pokémon</button>
+      </div>
+    </form>
+  </main>
+  <footer>
+    Código construído em 17-10-2022
+  </footer>
+</body>
+</html>
